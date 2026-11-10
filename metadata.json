@@ -1,0 +1,6 @@
+{
+  "name": "AirDrop Mac & Android - WiFi File Share",
+  "description": "Seamlessly connect your MacBook and Android phone over WiFi to transfer photos, 4K videos, documents, and clipboard text with native AirDrop experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

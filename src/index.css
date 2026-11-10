@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #070a13;
+    color: #f1f5f9;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Glassmorphism & Apple-grade frosted surfaces */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-button {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-button:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-1px);
+}
+
+.glass-button:active {
+  transform: translateY(1px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* High-Regulation Radar Animations */
+@keyframes highResRadarSweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes radarWaveExp {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.9;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@keyframes floatSlight {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes beamGlow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.radar-sweep-beam-hires {
+  animation: highResRadarSweep 7s linear infinite;
+  transform-origin: center center;
+}
+
+.radar-exp-1 {
+  animation: radarWaveExp 3.6s cubic-bezier(0.1, 0.7, 0.3, 1) infinite;
+}
+
+.radar-exp-2 {
+  animation: radarWaveExp 3.6s cubic-bezier(0.1, 0.7, 0.3, 1) infinite;
+  animation-delay: 1.2s;
+}
+
+.radar-exp-3 {
+  animation: radarWaveExp 3.6s cubic-bezier(0.1, 0.7, 0.3, 1) infinite;
+  animation-delay: 2.4s;
+}
+
+.device-float-subtle {
+  animation: floatSlight 4.5s ease-in-out infinite;
+}
+
+/* Glowing accent effects */
+.glow-sky {
+  box-shadow: 0 0 35px -5px rgba(2, 132, 199, 0.35);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.35);
+}
